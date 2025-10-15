@@ -7,7 +7,4 @@ vim.api.nvim_set_keymap("i", "<C-BS>", "<Esc>caw", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-H>", "<Esc>caw", { noremap = true })
 
 -- Double-space to save all in normal model
-vim.api.nvim_set_keymap("n", "<space><space>", ":wall<Enter>", { noremap = true })
-
--- Ctrl-Enter to perform code actions
-vim.api.nvim_set_keymap("n", "<Ctrl-Enter>", "<leader>ca", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader><leader>", ":wall<Enter>", { noremap = true })
