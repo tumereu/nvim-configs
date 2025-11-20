@@ -12,8 +12,21 @@ return {
       { "nvim-lua/plenary.nvim" },
     },
     keys = {
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Ripgrep" },
+      -- Resume previous search
       { "<leader>fr", "<cmd>Telescope resume<cr>" },
+      -- Grep from working directory
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Ripgrep" },
+      -- Grep specifically for git conflicts
+      {
+        "<leader>fC",
+        function()
+          require("telescope.builtin").grep_string({
+            search = "<<<<<<<",
+            prompt_title = "Git Conflicts",
+          })
+        end,
+        desc = "List Git conflict markers",
+      },
     },
     config = function()
       local telescope = require("telescope")
