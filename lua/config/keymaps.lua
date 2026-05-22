@@ -15,3 +15,9 @@ vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 -- FIXME this doesn't actaully seem to work, some other binding conflicts
 vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
+--
+-- Close all unpinned buffers, then immediately open telescope buffer search
+vim.keymap.set("n", "<leader>bx", "<leader>bP<leader>fb", {
+  remap = true,
+  desc = "Close unpinned buffers and search",
+})
